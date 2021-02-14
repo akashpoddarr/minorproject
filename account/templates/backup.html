@@ -1,0 +1,20 @@
+<!-- form start  -->
+
+<div class="container">
+    <h1>Register</h1>
+    <br>
+    <form method="POST" action="">
+        {% for i in Register_form %}
+        <label for="{{ i.id_for_label }}" class="lable"> {{ i.html_name }} </label>
+        {{ i }}
+        <br>
+        <br>
+        {% csrf_token %}
+            {% if i.help_text %}
+        <p class="help"> {{  i.help_text }} </p>
+        {% endif %}
+
+        {% endfor %}
+        <button type="submit" class="btn btn-outline-success">Register</button>
+    </form>
+</div>
